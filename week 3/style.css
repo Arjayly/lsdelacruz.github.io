@@ -1,0 +1,44 @@
+body{
+
+    background-color: rgb(219, 191, 191);
+    h1{
+        color: white;
+        text-align: center;
+    }
+    background-image: url("images/bg.jpg");
+    
+    p{
+        color: white;
+        text-align: center;
+        font-weight: bold;
+        text-decoration: underline;
+        font-size: 10px;
+        font-style: italic;
+        font-family: Arial; 
+    }
+
+    .heading2{
+        color: rgb(226, 140, 140);
+        text-align: center;
+        background-color: rgb(16, 17, 17);
+        width: 50%;
+        background-position: center;
+        border-top: 5px solid rgb(57, 102, 87);
+        
+        
+
+    }
+
+    .p1{
+        color: rgb(29, 29, 31);
+        text-align: center;
+        font-weight: bold;
+        text-decoration: underline;
+        font-size: 10px;
+        font-style: italic;
+        font-family: Arial; 
+    }
+
+
+
+}

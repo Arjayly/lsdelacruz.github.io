@@ -1,0 +1,115 @@
+body {
+    background-color: #16365d;
+    color: white;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.title1 {
+    text-align: end;
+    color: #ffffff;
+    font-weight: bold;
+    
+}
+.item{
+
+color: red;
+
+}
+.footers-item{
+
+color: pink;
+
+
+}
+
+
+
+.list-item {
+    color: #ff6ec7;
+    font-style: italic;
+}
+
+.link-red {
+    color: red;
+    text-decoration: underline;
+}
+
+.media-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    color: rgb(243, 17, 17);
+    margin-top: 40px;
+}
+
+.link-blue {
+    color: yellow;
+    text-decoration: underline;
+}
+
+.blue-text {
+    color: blue;
+    text-decoration: underline;
+}
+
+.green-link {
+    color: #00ff00;
+    font-weight: bold;
+}
+
+.format-box {
+    background-color: black;
+    border: 2px solid rgb(228, 174, 174);
+    padding: 5px 15px;
+    display: inline-block;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.format-box h2 {
+    margin: 0;
+    color: white;
+}
+
+.italic-blue {
+    color: lightblue;
+    font-style: italic;
+}
+
+.highlight-green {
+    background-color: lime;
+    color: black;
+    padding: 2px 4px;
+}
+
+.controls-title {
+    color: lime;
+    margin-top: 40px;
+}
+
+.dark-box {
+    background-color: black;
+    border: 2px solid #666;
+    padding: 15px;
+    margin-top: 10px;
+    color: white;
+}
+
+.galleries-title {
+    color: yellow;
+    border-bottom: 2px solid yellow;
+    display: inline-block;
+    margin-top: 40px;
+}
+
+.red-box {
+    background-color: red;
+    padding: 10px;
+    color: white;
+    margin-top: 10px;
+}
+.table {
+
+    color: red;
+}
