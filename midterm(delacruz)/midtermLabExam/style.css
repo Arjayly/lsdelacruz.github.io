@@ -1,0 +1,155 @@
+body {
+  font-family: 'Nunito', sans-serif;
+  color: #333;
+}
+
+/* Accent color */
+.text-accent {
+  color: #f86d72 !important;
+}
+.btn-accent {
+  background-color: #f86d72;
+  color: white;
+  border: none;
+  transition: 0.3s ease;
+}
+.btn-accent:hover {
+  background-color: #e45c62;
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(120deg, #fef1f1, #e7f0f7);
+  border-bottom: 1px solid #eee;
+}
+.hero h1 {
+  font-size: 2.8rem;
+}
+.hero-img {
+  max-width: 320px;
+}
+
+/* Discount Banner */
+.discount-banner {
+  background: url("images/banner-image-bg-1.jpg") center/cover no-repeat;
+  background-attachment: fixed; /* optional parallax effect */
+  background-blend-mode: multiply;
+}
+
+.discount-banner img {
+  max-width: 280px;
+  transition: transform 0.3s ease;
+}
+.discount-banner img:hover {
+  transform: scale(1.05);
+}
+
+
+/* Cards */
+.card img {
+  height: 260px;
+  object-fit: cover;
+}
+
+/* Categories Section */
+.category-card {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.category-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+.category-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Button label on bottom-left */
+.category-label {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+}
+
+.btn-category {
+  background-color: #f86d72;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.btn-category:hover {
+  background-color: #ff7d83;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+
+/* Footer Section */
+.footer {
+  font-family: 'Nunito', sans-serif;
+}
+
+.text-accent {
+  color: #f86d72;
+}
+
+.footer-link {
+  color: #6c757d;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #f86d72;
+  text-decoration: underline;
+}
+
+.footer h6 {
+  font-weight: 700;
+  color: #000;
+}
+
+.footer p,
+.footer ul {
+  line-height: 1.7;
+}
+
+.footer-logo {
+  height: 40px; /* adjust based on your logo */
+  width: auto;
+}
+
+.navbar-logo {
+  height: 40px;  /* adjust depending on your logo’s size */
+  width: auto;
+}
+
+.navbar {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.navbar-nav .nav-link {
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ff6b6b; /* Bookly accent color */
+}
+
+
