@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Natural Springs - Valencia Exploration Campaign</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    body { font-family: "Helvetica", sans-serif; scroll-behavior: smooth; margin: 0; }
+
+    /* Navbar */
+    .navbar-custom { background: transparent !important; position: absolute; width: 100%; z-index: 10; }
+    .navbar-custom .nav-link, .navbar-custom .navbar-brand { color: white !important; font-weight: 500; }
+    .navbar-custom .nav-link:hover { opacity: 0.7; }
+
+    /* Hero */
+    .hero { 
+        height: 60vh; 
+        background: url('images/pulangbato.webp') center/cover no-repeat; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        color: white; 
+        text-align: center; 
+        position: relative; 
+    }
+    .hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.35); }
+    .hero-content { position: relative; z-index: 2; max-width: 800px; }
+
+    /* Fade-in sections */
+    .fade-section { opacity: 0; transform: translateY(40px); transition: all 0.8s ease-out; padding: 60px 20px; }
+    .fade-section.visible { opacity: 1; transform: translateY(0); }
+
+    .section-title { font-size: 2rem; font-weight: 600; margin-bottom: 20px; }
+
+    /* Gallery fix - same size for all images */
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+    }
+    .gallery-item {
+        flex: 1 1 calc(50% - 1rem);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .gallery-item img {
+        width: 100%;
+        height: 260px; /* fixed height to match other pages */
+        object-fit: cover;
+        border-radius: 12px;
+    }
+
+    @media (max-width: 768px) {
+        .gallery-item { flex: 1 1 100%; }
+    }
+
+    a.btn { border-radius: 50px; }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-custom">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Valencia Exploration Campaign</a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="localspot.html">Local Spots</a></li>
+        <li class="nav-item"><a class="nav-link" href="naturalsprings.html">Natural Springs</a></li>
+        <li class="nav-item"><a class="nav-link" href="outdoor.html">Outdoors</a></li>
+        <li class="nav-item"><a class="nav-link" href="aboutUs.html">About Us</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>Natural Springs of Valencia</h1>
+        <p>Relax, explore, and enjoy the soothing waters of Valencia's pristine natural springs.</p>
+    </div>
+</header>
+
+<!-- Content -->
+<section class="fade-section bg-light">
+    <div class="container text-center">
+        <h2 class="section-title">Spring Features</h2>
+        <div class="text-block mx-auto p-4 rounded-4 shadow-sm" style="max-width: 850px; background: #fff; line-height: 1.7; font-size: 1.1rem;">
+            <p>Valencia is home to beautiful natural springs with crystal-clear water, perfect for swimming, picnicking, and connecting with nature. The surrounding areas provide peaceful spots for relaxation and hiking trails for adventure seekers.</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- Gallery -->
+<section class="fade-section">
+    <div class="container">
+        <h2 class="section-title text-center mb-4">Gallery</h2>
+        <div class="gallery">
+            <div class="gallery-item"><img src="images/pulangbato.webp" alt="Spring 1"></div>
+            <div class="gallery-item"><img src="images/casaroro.jpg" alt="Spring 2"></div>
+            <div class="gallery-item"><img src="images/forestcamp.jpg" alt="Spring 3"></div>
+            <div class="gallery-item"><img src="images/hotspring.jpg" alt="Spring 4"></div>
+        </div>
+        <a href="index.html" class="btn btn-outline-dark mt-4 d-block mx-auto" style="max-width: 200px;">Back to Home</a>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    const sections = document.querySelectorAll('.fade-section');
+    const reveal = () => {
+        sections.forEach(sec => {
+            if (sec.getBoundingClientRect().top < window.innerHeight - 120) {
+                sec.classList.add('visible');
+            }
+        });
+    };
+    window.addEventListener('scroll', reveal);
+    reveal();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Outdoors - Valencia Exploration Campaign</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    body { font-family: "Helvetica", sans-serif; scroll-behavior: smooth; margin: 0; background: #f8f9fa; }
+
+    /* Navbar */
+    .navbar-custom { background: transparent !important; position: absolute; width: 100%; z-index: 10; }
+    .navbar-custom .nav-link, .navbar-custom .navbar-brand { color: white !important; font-weight: 500; }
+    .navbar-custom .nav-link:hover { opacity: 0.7; }
+
+    /* Hero */
+    .hero { 
+        height: 60vh; 
+        background: url('images/outdoor.jpg') center/cover no-repeat; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        color: white; 
+        text-align: center; 
+        position: relative; 
+    }
+    .hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.35); }
+    .hero-content { position: relative; z-index: 2; max-width: 800px; }
+
+    /* Fade-in sections */
+    .fade-section { opacity: 0; transform: translateY(40px); transition: all 0.8s ease-out; padding: 60px 20px; }
+    .fade-section.visible { opacity: 1; transform: translateY(0); }
+
+    .section-title { font-size: 2.3rem; font-weight: 700; margin-bottom: 20px; text-align: center; color: #333; }
+
+    /* Text block for features */
+    .text-block {
+        background: #fff;
+        border-radius: 12px;
+        padding: 30px;
+        margin: 20px auto;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        line-height: 1.7;
+        font-size: 1.1rem;
+    }
+
+    /* Gallery */
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+    }
+    .gallery-item {
+        flex: 1 1 calc(50% - 1rem);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .gallery-item img {
+        width: 100%;
+        height: 260px;
+        object-fit: cover;
+        border-radius: 12px;
+        transition: transform 0.3s;
+    }
+    .gallery-item img:hover {
+        transform: scale(1.03);
+    }
+
+    @media (max-width: 768px) {
+        .gallery-item { flex: 1 1 100%; }
+    }
+
+    a.btn { border-radius: 50px; display: block; margin: 30px auto 0; max-width: 200px; text-align: center; }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-custom">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Valencia Exploration Campaign</a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="localspot.html">Local Spots</a></li>
+        <li class="nav-item"><a class="nav-link" href="naturalsprings.html">Natural Springs</a></li>
+        <li class="nav-item"><a class="nav-link" href="outdoor.html">Outdoors</a></li>
+        <li class="nav-item"><a class="nav-link" href="aboutUs.html">About Us</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>Valencia Outdoors</h1>
+        <p>Explore the scenic outdoors, gardens, and natural landscapes around Valencia.</p>
+    </div>
+</header>
+
+<!-- Outdoor Features Section -->
+<section class="fade-section">
+    <div class="container text-center">
+        <h2 class="section-title">Outdoor Features</h2>
+        <div class="text-block">
+            <p>Valencia’s outdoor spaces include scenic viewpoints, lush gardens, cozy terraces, and recreational areas. Enjoy hiking trails, nature walks, and peaceful spots for relaxation or picnics.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Section -->
+<section class="fade-section">
+    <div class="container">
+        <h2 class="section-title text-center mb-4">Gallery</h2>
+        <div class="gallery">
+            <div class="gallery-item"><img src="images/chosen view.jpg" alt="Outdoor 1"></div>
+            <div class="gallery-item"><img src="images/random.jpg" alt="Outdoor 2"></div>
+            <div class="gallery-item"><img src="images/number13.jpg" alt="Outdoor 3"></div>
+            <div class="gallery-item"><img src="images/number14.jpg" alt="Outdoor 4"></div>
+        </div>
+        <a href="index.html" class="btn btn-outline-dark">Back to Home</a>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    const sections = document.querySelectorAll('.fade-section');
+    const reveal = () => {
+        sections.forEach(sec => {
+            if (sec.getBoundingClientRect().top < window.innerHeight - 120) {
+                sec.classList.add('visible');
+            }
+        });
+    };
+    window.addEventListener('scroll', reveal);
+    reveal();
+</script>
+
+</body>
+</html>
