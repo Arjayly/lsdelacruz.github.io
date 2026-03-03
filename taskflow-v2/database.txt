@@ -1,0 +1,66 @@
+TASKFLOW — DATABASE REFERENCE
+==============================
+Table: tasks
+Engine: MySQL / MariaDB (utf8mb4_unicode_ci)
+
+COLUMNS
+-------
+• id           INT, AUTO_INCREMENT, PRIMARY KEY
+               Unique identifier for each task. Never reused after deletion.
+
+• title        VARCHAR(255), NOT NULL
+               Short summary of the task. Required — the app blocks saving without it.
+
+• description  TEXT, nullable
+               Optional longer details or notes about the task.
+
+• priority     ENUM('low', 'medium', 'high'), default: medium
+               Controls the coloured left-border on each task card and the sort order
+               (high → medium → low).
+
+• status       ENUM('pending', 'in_progress', 'completed'), default: pending
+               Drives the stats counters and the strikethrough on completed cards.
+               The checkbox on a card toggles between pending ↔ completed.
+
+• due_date     DATE (YYYY-MM-DD), nullable
+               Optional deadline. Displays as "⚠ overdue" in red when past due
+               and the task is not yet completed.
+
+• created_at   TIMESTAMP, default: CURRENT_TIMESTAMP
+               Set automatically when the row is inserted. Never changes.
+
+• updated_at   TIMESTAMP, default: CURRENT_TIMESTAMP, ON UPDATE CURRENT_TIMESTAMP
+               Refreshed automatically by MySQL every time the row is updated.
+
+SORT ORDER
+----------
+Results are ordered by priority (high first), then by created_at DESC
+(newest within the same priority level appears first).
+
+STATS QUERY
+-----------
+A second query runs on every page load to count:
+  total       — all rows
+  pending     — rows where status = 'pending'
+  in_progress — rows where status = 'in_progress'
+  completed   — rows where status = 'completed'
+
+FILTERS (passed as GET parameters to api.php)
+----------------------------------------------
+  status    — exact match against the status enum
+  priority  — exact match against the priority enum
+  search    — LIKE match on title OR description (case-insensitive)
+
+SETUP SQL
+---------
+CREATE TABLE tasks (
+  id          INT           NOT NULL AUTO_INCREMENT,
+  title       VARCHAR(255)  NOT NULL,
+  description TEXT,
+  priority    ENUM('low','medium','high')               DEFAULT 'medium',
+  status      ENUM('pending','in_progress','completed') DEFAULT 'pending',
+  due_date    DATE,
+  created_at  TIMESTAMP     NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at  TIMESTAMP     NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
